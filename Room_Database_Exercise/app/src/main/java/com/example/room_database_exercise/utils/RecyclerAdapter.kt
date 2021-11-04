@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.room_database_exercise.databinding.FragmentProjectBinding
 import com.example.room_database_exercise.fragments.MainFragmentDirections
 import com.example.room_database_exercise.model.Project
@@ -18,6 +19,11 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
             binding.projectId.text = project.ID.toString()
             binding.projectTitle.text = project.title
             binding.projectDescription.text = project.description
+
+            Glide.with(binding.root.context)
+                .load(project.image_url)
+                .into(binding.projectImage)
+
             binding.projectLayout.setOnClickListener {
                 val action = MainFragmentDirections.actionMainFragmentToUpdateFragment(project)
                 itemView.findNavController().navigate(action)

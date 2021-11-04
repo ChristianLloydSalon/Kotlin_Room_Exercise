@@ -12,4 +12,5 @@
     <string name="update_text">Update</string>
     <string name="base_id">0</string>
     <string name="delete_text">Delete</string>
+    <string name="image_url">Image URL</string>
 </resources>

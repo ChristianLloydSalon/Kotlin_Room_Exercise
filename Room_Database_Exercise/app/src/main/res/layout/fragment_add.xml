@@ -26,8 +26,8 @@
             android:id="@+id/project_title_input"
             android:layout_width="230dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/on_background" />
-
+            android:textColor="@color/on_background"
+            android:maxLines="1"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Description Input -->
@@ -39,6 +39,7 @@
         app:hintTextColor="@color/primary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintVertical_bias="0.4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,20 +51,44 @@
             android:layout_width="230dp"
             android:layout_height="300dp"
             android:textColor="@color/on_background"
-            android:inputType="textMultiLine" />
-
+            android:inputType="textMultiLine"/>
     </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Image URL Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/url_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/image_url"
+        android:textColorHint="@color/primary"
+        android:layout_marginTop="20dp"
+        android:maxLines="1"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:boxStrokeColor="@color/primary"
+        app:hintTextColor="@color/primary"
+        app:layout_constraintEnd_toEndOf="@+id/description_layout"
+        app:layout_constraintStart_toStartOf="@+id/description_layout"
+        app:layout_constraintTop_toBottomOf="@+id/description_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/project_url_input"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/on_background"
+            android:maxLines="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Add Button -->
     <Button
         android:id="@+id/add_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:backgroundTint="@color/secondary"
         android:text="@string/add_project"
         android:textColor="@color/on_secondary"
-        app:layout_constraintEnd_toEndOf="@+id/description_layout"
-        app:layout_constraintStart_toStartOf="@+id/description_layout"
-        app:layout_constraintTop_toBottomOf="@+id/description_layout" />
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/url_layout"
+        app:layout_constraintStart_toStartOf="@+id/url_layout"
+        app:layout_constraintTop_toBottomOf="@+id/url_layout"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

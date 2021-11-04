@@ -12,4 +12,5 @@ data class Project(
     val ID: Int,
     val title: String,
     val description: String,
+    val image_url: String?
 ): Parcelable

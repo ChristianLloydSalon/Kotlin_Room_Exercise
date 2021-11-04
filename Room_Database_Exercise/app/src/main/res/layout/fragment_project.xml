@@ -30,7 +30,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Project Name -->
+        <!-- Trainee Name -->
         <TextView
             android:id="@+id/project_title"
             android:layout_width="200dp"
@@ -47,7 +47,7 @@
             app:layout_constraintLeft_toRightOf="@id/project_image"
             app:layout_constraintTop_toTopOf="@id/project_image" />
 
-        <!-- Project Description -->
+        <!-- Trainee Position -->
         <TextView
             android:id="@+id/project_description"
             android:text="@string/user_title"

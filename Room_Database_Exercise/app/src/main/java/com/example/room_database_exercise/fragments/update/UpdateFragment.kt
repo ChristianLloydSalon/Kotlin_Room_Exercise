@@ -3,7 +3,12 @@ package com.example.room_database_exercise.fragments.update
 import android.app.AlertDialog
 import android.os.Bundle
 import android.text.TextUtils
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -38,6 +43,7 @@ class UpdateFragment : Fragment() {
 
         binding.projectTitle.setText(args.currentProject.title)
         binding.projectDescription.setText(args.currentProject.description)
+        binding.projectUrl.setText(args.currentProject.image_url)
 
         // set update button onclick event
         binding.updateButton.setOnClickListener {
@@ -48,16 +54,26 @@ class UpdateFragment : Fragment() {
     private fun updateItem() {
         val title = binding.projectTitle.text.toString()
         val description = binding.projectDescription.text.toString()
+        val imageURL = binding.projectUrl.text.toString()
 
         if (validateInput(title, description)) {
             // create new project
-            val updatedProject = Project(args.currentProject.ID, title, description)
+            val updatedProject = Project(args.currentProject.ID, title, description, imageURL)
 
             // update database
             projectViewModel.updateProject(updatedProject)
 
             // Navigate back to Main Fragment
             findNavController().navigate(R.id.action_updateFragment_to_mainFragment)
+        }
+        else {
+            val builder = AlertDialog.Builder(requireContext())
+            builder.setPositiveButton("OK") { _, _ ->
+            }
+
+            builder.setTitle("Invalid Input")
+            builder.setMessage("Fields should not be empty!")
+            builder.create().show()
         }
     }
 
