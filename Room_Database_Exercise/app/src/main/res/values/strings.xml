@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Room_Database_Exercise</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="user_name">Christian Lloyd B. Salon</string>
+    <string name="user_title">Software Engineer Trainee</string>
+    <string name="my_projects_text">My Projects</string>
+    <string name="add_project">Add Project</string>
+    <string name="delete_project">Delete Project</string>
+    <string name="project_description">Project Description</string>
+    <string name="project_title">Project Title</string>
+    <string name="update_text">Update</string>
+    <string name="base_id">0</string>
+    <string name="delete_text">Delete</string>
+</resources>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="15dp"
+    android:layout_margin="15dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:elevation="5dp"
+    android:backgroundTint="@color/surface"
+    tools:context=".fragments.ProjectFragment"
+    android:id="@+id/project_layout">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Project Image -->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/project_image"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/profile"
+            app:civ_border_color="@color/secondary"
+            app:civ_border_width="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Project Name -->
+        <TextView
+            android:id="@+id/project_title"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="@string/user_name"
+            android:textColor="@color/on_surface"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:layout_marginStart="20dp"
+            app:layout_constraintVertical_bias="0.3"
+            app:layout_constraintBottom_toBottomOf="@+id/project_image"
+            app:layout_constraintLeft_toRightOf="@id/project_image"
+            app:layout_constraintTop_toTopOf="@id/project_image" />
+
+        <!-- Project Description -->
+        <TextView
+            android:id="@+id/project_description"
+            android:text="@string/user_title"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/on_surface"
+            app:layout_constraintLeft_toLeftOf="@id/project_title"
+            app:layout_constraintTop_toBottomOf="@id/project_title"/>
+
+        <TextView
+            android:id="@+id/project_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/base_id"
+            android:layout_margin="20dp"
+            android:textSize="20sp"
+            android:textColor="@color/on_surface"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
